@@ -1,0 +1,75 @@
+*{
+    font-family: 'Cascadia Code';
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    margin: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.time-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.time-item {
+    margin: 10px;
+    text-align: center;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(179, 31, 31, 0.1);
+}
+
+.time-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #aa1036;
+}
+
+.time-label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .box {
+        width: 90%;
+    }
+    
+    .time-number {
+        font-size: 20px;
+    }
+
+    .time-label {
+        font-size: 12px;
+    }
+}

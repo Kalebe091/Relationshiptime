@@ -1,0 +1,59 @@
+*{
+    font-family: 'Cascadia Code';
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.box {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    margin: 20px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #da2754;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #aa1036;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .box {
+        width: 90%;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

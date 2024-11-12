@@ -2,19 +2,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const startDate = new Date('2022-05-11T10:00:00'); // Data de início do relacionamento
 
     function updateTimer() {
-        const now = new Date();
-        let diff = Math.floor((now - startDate) / 1000); // diferença em segundos
+        const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
+        
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
 
-        const years = Math.floor(diff / (365.25 * 24 * 60 * 60));
-        diff -= years * 365.25 * 24 * 60 * 60;
-        const months = Math.floor(diff / (30.44 * 24 * 60 * 60));
-        diff -= months * 30.44 * 24 * 60 * 60;
-        const days = Math.floor(diff / (24 * 60 * 60));
-        diff -= days * 24 * 60 * 60;
-        const hours = Math.floor(diff / (60 * 60));
-        diff -= hours * 60 * 60;
-        const minutes = Math.floor(diff / 60);
-        const seconds = diff % 60;
+        // Ajuste de valores negativos
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += previousMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
 
         document.getElementById('years').textContent = years;
         document.getElementById('months').textContent = months;
